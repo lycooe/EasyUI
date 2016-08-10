@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@id/base_swipe_refresh_widget"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <com.lz.easyui.widget.swiperefresh.XListView
+                    android:id="@+id/fgm_cheese_listview"
+                    android:listSelector="#00dfdede"
+                    android:cacheColorHint="#00000000"
+                    android:fadingEdge="none"
+                    android:layout_weight="1"
+                    android:divider="#ffe5e5e5"
+                    android:dividerHeight="0.5dp"
+                    android:headerDividersEnabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</RelativeLayout>

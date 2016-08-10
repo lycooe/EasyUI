@@ -1,2 +1,2 @@
 # EasyUI
-UI框架
+ui框架

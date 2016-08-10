@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@id/base_swipe_refresh_widget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ExpandableListView
+                android:id="@+id/base_fgm_expandable"
+                android:listSelector="#00dfdede"
+                android:cacheColorHint="#00000000"
+                android:fadingEdge="none"
+                android:divider="#00b1b1b1"
+                android:dividerHeight="0dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

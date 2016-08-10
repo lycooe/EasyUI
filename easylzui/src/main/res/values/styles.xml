@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/library_shadow_left</item>
+        <item name="shadow_right">@drawable/library_shadow_right</item>
+        <item name="shadow_bottom">@drawable/library_shadow_bottom</item>
+    </style>
+
+    <style name="Theme.Push" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:windowAnimationStyle">@style/AnimationActivityPush</item>
+    </style>
+
+    <style name="Theme.Present" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:windowAnimationStyle">@style/AnimationActivityPresent</item>
+    </style>
+
+    <style name="Theme.No.ActionBar.Push" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivityPush</item>
+    </style>
+
+    <style name="Theme.No.ActionBar.Present" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivityPresent</item>
+    </style>
+
+    <style name="Theme.No.ActionBar.NoTranslucent.Push" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivityPush</item>
+    </style>
+
+    <style name="Theme.No.ActionBar.NoTranslucent.Present" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivityPresent</item>
+    </style>
+
+    <style name="AnimationActivityPush" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/library_slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/library_slide_out_left</item>
+
+        <item name="android:activityCloseEnterAnimation">@anim/library_slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/library_slide_out_right</item>
+    </style>
+
+    <style name="AnimationActivityPresent" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/library_slide_in_from_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/library_slide_out_to_top</item>
+
+        <item name="android:activityCloseEnterAnimation">@anim/library_slide_in_from_top</item>
+        <item name="android:activityCloseExitAnimation">@anim/library_slide_out_to_bottom</item>
+    </style>
+
+    <style name="CalendarTitle">
+        <item name="android:textSize">@dimen/calendar_text_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalendarCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+    <style name="CalendarCell.DayHeader">
+        <item name="android:textSize">@dimen/calendar_text_small</item>
+    </style>
+
+    <style name="CalendarCell.CalendarDate">
+        <item name="android:textSize">@dimen/calendar_text_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
