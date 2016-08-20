@@ -6,11 +6,11 @@ ui框架
 Download the latest JAR or grab via Maven:
 
     <dependency>
-      <groupId>com.lz.easyhttp</groupId>
-      <artifactId>easyhttp</artifactId>
-      <version>0.1.0</version>
+      <groupId>com.lz.easyui</groupId>
+      <artifactId>easylzui</artifactId>
+      <version>0.0.6</version>
     </dependency>
     
 or Gradle:
 
-    compile 'com.lz.easyhttp:easyhttp:0.1.0'
+    compile 'com.lz.easyui:easylzui:0.0.6'
