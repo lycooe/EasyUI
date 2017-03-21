@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.lz.easyui.widget.timessquare.CalendarPickerView
+    <com.lewis.magicalui.widget.timessquare.CalendarPickerView
         android:id="@+id/act_calendar_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"

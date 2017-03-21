@@ -1,2 +1,2 @@
-# EasyUI
+# MagicalUI
 ui框架

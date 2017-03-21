@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">magicalui</string>
+
+    <string name="header_hint_refresh_normal">下拉刷新</string>
+    <string name="header_hint_refresh_ready">松开即可刷新</string>
+    <string name="header_hint_refresh_loading">正在载入&#8230;</string>
+    <string name="header_hint_refresh_time">上次刷新时间：</string>
+    <string name="footer_hint_load_normal">加载更多</string>
+    <string name="footer_hint_load_ready">松开即可加载更多</string>
+
+    <string name="day_name_format">EEE</string>
+    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <string name="month_name_format">MMMM yyyy</string>
+</resources>
