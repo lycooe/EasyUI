@@ -6,11 +6,11 @@ ui框架
 Download the latest JAR or grab via Maven:
 
     <dependency>
-      <groupId>com.lz.easyui</groupId>
-      <artifactId>easylzui</artifactId>
+      <groupId>com.lewis.easyui</groupId>
+      <artifactId>lewisui</artifactId>
       <version>0.0.6</version>
     </dependency>
     
 or Gradle:
 
-    compile 'com.lz.easyui:easylzui:0.0.6'
+    compile 'com.lewis.easyui:lewisui:0.0.6'
