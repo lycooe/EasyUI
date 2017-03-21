@@ -1,4 +1,4 @@
-# MagicalUI
+# easyui
 ui框架
 
 ##使用方法
