@@ -2,7 +2,7 @@ package com.lewis.easyui.util;
 
 import android.widget.Toast;
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 public class ToastUtil {
 
@@ -22,6 +22,6 @@ public class ToastUtil {
     }
 
     public static void toast(String msg, int time){
-        Toast.makeText(easyui.ctx, msg, time).show();
+        Toast.makeText(EasyUI.ctx, msg, time).show();
     }
 }

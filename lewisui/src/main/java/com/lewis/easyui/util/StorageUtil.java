@@ -4,7 +4,7 @@ import android.content.res.AssetManager;
 import android.os.Environment;
 
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,21 +23,21 @@ public class StorageUtil {
     }
 
     public static String getCache() {
-        return easyui.ctx.getCacheDir() + "/" + easyui.app_identity + "-" + System.currentTimeMillis();
+        return EasyUI.ctx.getCacheDir() + "/" + EasyUI.app_identity + "-" + System.currentTimeMillis();
     }
 
     public static String getTemp() {
-        return easyui.ctx.getCacheDir() + "/temp/" + easyui.app_identity + "-" + System.currentTimeMillis();
+        return EasyUI.ctx.getCacheDir() + "/temp/" + EasyUI.app_identity + "-" + System.currentTimeMillis();
     }
 
     public static String getStorageDirectory() {
-        return Environment.getExternalStorageDirectory() + "/." + easyui.app_identity;
+        return Environment.getExternalStorageDirectory() + "/." + EasyUI.app_identity;
     }
 
     public static String getStorage(String content, long id, boolean isDirectory) {
         String external = Environment.getExternalStorageDirectory().getPath();
 
-        external += "/." + easyui.app_identity + "/Content/" + content + id;
+        external += "/." + EasyUI.app_identity + "/Content/" + content + id;
 
         if (isDirectory) {
             external += "/";
@@ -48,11 +48,11 @@ public class StorageUtil {
 
     public static void cleanAll() {
         try {
-            if (new File(easyui.ctx.getCacheDir() + "/").exists())
-                FileUtils.cleanDirectory(new File(easyui.ctx.getCacheDir() + "/"));
+            if (new File(EasyUI.ctx.getCacheDir() + "/").exists())
+                FileUtils.cleanDirectory(new File(EasyUI.ctx.getCacheDir() + "/"));
             String external = Environment.getExternalStorageDirectory().getPath();
-            if (new File(external + "/." + easyui.app_identity + "/Content/").exists())
-                FileUtils.cleanDirectory(new File(external + "/." + easyui.app_identity + "/Content/"));
+            if (new File(external + "/." + EasyUI.app_identity + "/Content/").exists())
+                FileUtils.cleanDirectory(new File(external + "/." + EasyUI.app_identity + "/Content/"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,7 +64,7 @@ public class StorageUtil {
                 path = path.substring(0, path.length() - 1);
             }
 
-            AssetManager assetManager = easyui.ctx.getAssets();
+            AssetManager assetManager = EasyUI.ctx.getAssets();
 
             String[] files = new String[0];
 
@@ -129,7 +129,7 @@ public class StorageUtil {
 
     public static InputStream openInputStream(String file) throws IOException {
         if (file.startsWith(ROOT_ASSET)) {
-            AssetManager assetManager = easyui.ctx.getAssets();
+            AssetManager assetManager = EasyUI.ctx.getAssets();
             return assetManager.open(file.substring(ROOT_ASSET.length()));
         } else {
             return FileUtils.openInputStream(new File(file));
@@ -153,7 +153,7 @@ public class StorageUtil {
     }
 
     public static void cleanCache() throws IOException {
-        FileUtils.cleanDirectory(easyui.ctx.getCacheDir());
+        FileUtils.cleanDirectory(EasyUI.ctx.getCacheDir());
     }
 
 }

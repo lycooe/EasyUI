@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 public class UIDialogUtil {
 
@@ -46,7 +46,7 @@ public class UIDialogUtil {
         dialog.show();
         window.setContentView(view);
         WindowManager.LayoutParams lp = window.getAttributes();
-        lp.width = easyui.screenWidthScale; //设置宽度
+        lp.width = EasyUI.screenWidthScale; //设置宽度
         window.setAttributes(lp);
         dialog.setCanceledOnTouchOutside(outsideCancelable);
         return dialog;
@@ -69,7 +69,7 @@ public class UIDialogUtil {
         progressDialog.show();
         window.setContentView(view);
         WindowManager.LayoutParams lp = window.getAttributes();
-        lp.width = easyui.screenWidthScale; //设置宽度
+        lp.width = EasyUI.screenWidthScale; //设置宽度
         window.setAttributes(lp);
         progressDialog.setCanceledOnTouchOutside(outsideCancelable);
         return progressDialog;

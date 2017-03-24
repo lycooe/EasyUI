@@ -9,7 +9,7 @@ import android.text.style.URLSpan;
 import android.text.util.Linkify;
 import android.widget.TextView;
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -177,7 +177,7 @@ public class HtmlRenderUtil {
     public static Spanned fromHtml(String str) {
         String inStr = str;
 
-        TextView textView = new TextView(easyui.ctx);
+        TextView textView = new TextView(EasyUI.ctx);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView.setAutoLinkMask(Linkify.WEB_URLS);
         textView.setText(Html.fromHtml(inStr));

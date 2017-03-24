@@ -7,7 +7,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 import java.lang.reflect.Method;
 
@@ -26,33 +26,33 @@ public class DeviceUtil {
     }
 
     public static String getImei() {
-        TelephonyManager tm = (TelephonyManager) easyui.ctx.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager tm = (TelephonyManager) EasyUI.ctx.getSystemService(Context.TELEPHONY_SERVICE);
         return tm.getDeviceId();
     }
 
     public static float getDensity() {
-        DisplayMetrics displayMetrics = easyui.ctx.getResources().getDisplayMetrics();
+        DisplayMetrics displayMetrics = EasyUI.ctx.getResources().getDisplayMetrics();
         return displayMetrics.density;
     }
 
     public static float getWidth() {
-        DisplayMetrics displayMetrics = easyui.ctx.getResources().getDisplayMetrics();
+        DisplayMetrics displayMetrics = EasyUI.ctx.getResources().getDisplayMetrics();
         return displayMetrics.widthPixels;
     }
 
     public static float getHeigh() {
-        DisplayMetrics displayMetrics = easyui.ctx.getResources().getDisplayMetrics();
+        DisplayMetrics displayMetrics = EasyUI.ctx.getResources().getDisplayMetrics();
         return displayMetrics.heightPixels;
     }
 
     public static String getResolution() {
-        DisplayMetrics displayMetrics = easyui.ctx.getResources().getDisplayMetrics();
+        DisplayMetrics displayMetrics = EasyUI.ctx.getResources().getDisplayMetrics();
         return displayMetrics.widthPixels + "*" + displayMetrics.heightPixels;
     }
 
     public static int getVersionCode() {
-        PackageManager manager = easyui.ctx.getPackageManager();
-        ApplicationInfo info = easyui.ctx.getApplicationInfo();
+        PackageManager manager = EasyUI.ctx.getPackageManager();
+        ApplicationInfo info = EasyUI.ctx.getApplicationInfo();
 
         try {
             return manager.getPackageInfo(info.packageName, 0).versionCode;
@@ -62,8 +62,8 @@ public class DeviceUtil {
     }
 
     public static String getVersionName() {
-        PackageManager manager = easyui.ctx.getPackageManager();
-        ApplicationInfo info = easyui.ctx.getApplicationInfo();
+        PackageManager manager = EasyUI.ctx.getPackageManager();
+        ApplicationInfo info = EasyUI.ctx.getApplicationInfo();
 
         try {
             return manager.getPackageInfo(info.packageName, 0).versionName;

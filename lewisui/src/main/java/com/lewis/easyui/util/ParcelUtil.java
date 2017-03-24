@@ -1,7 +1,7 @@
 package com.lewis.easyui.util;
 
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -99,13 +99,13 @@ public class ParcelUtil {
     }
 
     public static int getIdentifier(String name, String defType) {
-        return easyui.resource.getIdentifier(name, defType, easyui.pkgName);
+        return EasyUI.resource.getIdentifier(name, defType, EasyUI.pkgName);
     }
 
     private static Class getResourceClass(String defType) {
 //        for (Class clazz : arrr.getClasses()) {
         try {
-            for (Class clazz : Class.forName(easyui.pkgName + ".R").getClasses()) {
+            for (Class clazz : Class.forName(EasyUI.pkgName + ".R").getClasses()) {
                 if (defType.equals(clazz.getSimpleName())) {
                     return (clazz);
                 }

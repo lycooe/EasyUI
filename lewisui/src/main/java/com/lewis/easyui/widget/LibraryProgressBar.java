@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 import com.lewis.easyui.util.RelayoutViewTool;
 import com.lewis.easyui.util.UIDialogUtil;
 import com.lewis.easyui.R;
@@ -57,7 +57,7 @@ public class LibraryProgressBar {
 
         View view = View.inflate(act, R.layout.library_common_dialog_progressbar, null);
         if (relayout) {
-            RelayoutViewTool.relayoutViewWithScale(view, easyui.screenWidthScale);
+            RelayoutViewTool.relayoutViewWithScale(view, EasyUI.screenWidthScale);
         }
         progressBarDialog = UIDialogUtil.getInstance().buildDialog(act, view, false);
         TextView titleTest = (TextView) view.findViewById(R.id.library_common_dialog_loading_txt);

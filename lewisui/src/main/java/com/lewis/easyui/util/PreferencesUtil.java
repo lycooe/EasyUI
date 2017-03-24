@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
 
-import com.lewis.easyui.easyui;
+import com.lewis.easyui.EasyUI;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ public class PreferencesUtil {
     private final static String TAG = "PreferencesUtil";
 
     public static <T> void putPreferences(String key, T value) {
-        SharedPreferences.Editor editor = easyui.preferences.edit();
+        SharedPreferences.Editor editor = EasyUI.preferences.edit();
         if (value instanceof String) {
             editor.putString(key, value.toString());
         } else if (value instanceof Boolean) {
@@ -33,15 +33,15 @@ public class PreferencesUtil {
     public static <T> T getPreferences(String key, T value) {
         Object o = null;
         if (value instanceof String) {
-            o = easyui.preferences.getString(key, value.toString());
+            o = EasyUI.preferences.getString(key, value.toString());
         } else if (value instanceof Boolean) {
-            o = easyui.preferences.getBoolean(key, ((Boolean) value).booleanValue());
+            o = EasyUI.preferences.getBoolean(key, ((Boolean) value).booleanValue());
         } else if (value instanceof Integer) {
-            o = easyui.preferences.getInt(key, ((Integer) value).intValue());
+            o = EasyUI.preferences.getInt(key, ((Integer) value).intValue());
         } else if (value instanceof Float) {
-            o = easyui.preferences.getFloat(key, ((Float) value).floatValue());
+            o = EasyUI.preferences.getFloat(key, ((Float) value).floatValue());
         } else if (value instanceof Long) {
-            o = easyui.preferences.getLong(key, ((Long) value).longValue());
+            o = EasyUI.preferences.getLong(key, ((Long) value).longValue());
         }
         T t = (T) o;
         return t;
@@ -84,7 +84,7 @@ public class PreferencesUtil {
 
     public static void putSDCardFile(String fileName, String msg) {
         try {
-            File path = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/." + easyui.pkgName + "/");
+            File path = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/." + EasyUI.pkgName + "/");
             if (!path.exists()) {
                 path.mkdirs();
             }
@@ -100,7 +100,7 @@ public class PreferencesUtil {
     public static String getSDCardFile(String fileName) {
         String msg = null;
         try {
-            FileInputStream fis = new FileInputStream(Environment.getExternalStorageDirectory().getAbsolutePath() + "/." + easyui.pkgName + "/" + fileName);
+            FileInputStream fis = new FileInputStream(Environment.getExternalStorageDirectory().getAbsolutePath() + "/." + EasyUI.pkgName + "/" + fileName);
             byte[] b = new byte[fis.available()];
             fis.read(b);
             fis.close();
