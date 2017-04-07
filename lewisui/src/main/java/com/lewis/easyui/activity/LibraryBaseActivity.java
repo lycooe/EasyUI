@@ -16,10 +16,13 @@ import com.lewis.easyui.util.StatusBarTool;
 import com.lewis.easyui.widget.swipebacklayout.SwipeBackActivity;
 import com.lewis.easyui.widget.swipebacklayout.SwipeBackLayout;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.io.Serializable;
 
 import butterknife.ButterKnife;
-import de.greenrobot.event.EventBus;
 
 /**
  *
@@ -74,8 +77,8 @@ public abstract class LibraryBaseActivity extends SwipeBackActivity {
         }
 
         initHeader();
-        initWidget();
         setWidgetState();
+        initData();
     }
 
     @Override
@@ -93,8 +96,8 @@ public abstract class LibraryBaseActivity extends SwipeBackActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    public void onEvent(BaseEvent event) {
-
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(BaseEvent event) {
     }
 
     protected View getBaseActView() {
@@ -124,9 +127,9 @@ public abstract class LibraryBaseActivity extends SwipeBackActivity {
 
     protected abstract void initHeader();// 初始化头部
 
-    protected abstract void initWidget();// 初始化控件
-
     protected abstract void setWidgetState();// 设置控件状态（注册监听or设置设配器）
+
+    protected abstract void initData();// 获取数据
 
     protected <T> T getExtra(String key, T value) {
         Object o = null;

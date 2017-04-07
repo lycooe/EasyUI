@@ -19,6 +19,9 @@
     <item name="base_fgm_recyclerview" type="id" />
     <item name="easy_toolbar" type="id" />
 
+    <item name="tabbar_tablayout" type="id" />
+    <item name="tabbar_view" type="id" />
+
 
     <item type="id" name="day_view_adapter_class"/>
 </resources>

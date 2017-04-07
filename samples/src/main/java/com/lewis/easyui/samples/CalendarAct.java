@@ -56,7 +56,7 @@ public class CalendarAct extends LibraryBaseActivity {
     }
 
     @Override
-    protected void initWidget() {
+    protected void initData() {
 
     }
 

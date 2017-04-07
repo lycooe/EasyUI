@@ -2,13 +2,6 @@ package com.lewis.easyui.util;
 
 import java.io.UnsupportedEncodingException;
 
-/**
- * Created with IntelliJ IDEA.
- * User: junhai
- * Date: 13-1-25
- * Time: 下午4:37
- * To change this template use File | Settings | File Templates.
- */
 public class Base64Utils {
     private static char[] base64EncodeChars = new char[]{
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',

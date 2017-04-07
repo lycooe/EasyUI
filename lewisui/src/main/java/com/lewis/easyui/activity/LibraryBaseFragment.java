@@ -13,7 +13,7 @@ import com.lewis.easyui.event.BaseEvent;
 import com.lewis.easyui.util.RelayoutViewTool;
 
 import butterknife.ButterKnife;
-import de.greenrobot.event.EventBus;
+import org.greenrobot.eventbus.EventBus;
 
 /**
  *
@@ -51,7 +51,6 @@ public abstract class LibraryBaseFragment extends Fragment {
             RelayoutViewTool.relayoutViewWithScale(baseFgmView, getTopActivity().getApplicationContext().getResources().getDisplayMetrics().widthPixels);
         }
         initWidget(baseFgmView);
-        addListener();
         setWidgetState();
         if (callInit()) {
             initData();
@@ -83,10 +82,6 @@ public abstract class LibraryBaseFragment extends Fragment {
     protected abstract int getContentViewId();
 
     public abstract void initWidget(View view);
-
-    @Deprecated
-    public void addListener() {
-    }
 
     public abstract void setWidgetState();
 
