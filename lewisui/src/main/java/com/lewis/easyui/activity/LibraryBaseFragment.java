@@ -14,6 +14,8 @@ import com.lewis.easyui.util.RelayoutViewTool;
 
 import butterknife.ButterKnife;
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  *
@@ -39,8 +41,8 @@ public abstract class LibraryBaseFragment extends Fragment {
         EventBus.getDefault().unregister(this);
     }
 
-    public void onEvent(BaseEvent event) {
-
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(BaseEvent event) {
     }
 
     @Override
