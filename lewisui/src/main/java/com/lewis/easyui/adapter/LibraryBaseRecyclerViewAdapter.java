@@ -29,6 +29,8 @@ public abstract class LibraryBaseRecyclerViewAdapter<DataSource, Holder extends 
 
     private Context ctx;
 
+    private OnRecyclerViewClickListener mListener;
+
     public LibraryBaseRecyclerViewAdapter(Context context) {
         this.ctx = context;
     }
@@ -97,13 +99,22 @@ public abstract class LibraryBaseRecyclerViewAdapter<DataSource, Holder extends 
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
         if (position < getHeaderCount()) {
             // Headers don't need anything special
 
         } else if (position < getItemCount() - getFooterCount()) {
             // This is a real position, not a header or footer. Bind it.
             onBindViewHolder((Holder) viewHolder, getItem(position - getHeaderCount()), position - getHeaderCount());
+
+            if (!CheckTool.isEmpty(viewHolder.itemView) && !CheckTool.isEmpty(mListener)) {
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mListener.onItemClick(v, position - getHeaderCount(), getItem(position - getHeaderCount()));
+                    }
+                });
+            }
         } else {
             // Footers don't need anything special
         }
@@ -228,5 +239,13 @@ public abstract class LibraryBaseRecyclerViewAdapter<DataSource, Holder extends 
     public void startActivity(Intent it) {
         it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getAdapterContext().startActivity(it);
+    }
+
+    public void setRecyclerViewClickListener(OnRecyclerViewClickListener listener) {
+        this.mListener = listener;
+    }
+
+    public interface OnRecyclerViewClickListener<DataSource> {
+        void onItemClick(View view, int position, DataSource data);
     }
 }

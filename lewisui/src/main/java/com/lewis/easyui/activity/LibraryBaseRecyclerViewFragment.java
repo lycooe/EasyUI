@@ -17,7 +17,7 @@ import java.util.List;
 /**
  *
  */
-public abstract class LibraryBaseRecyclerViewFragment<DataSource> extends LibraryBaseFragment implements SwipeRefreshLayout.OnRefreshListener {
+public abstract class LibraryBaseRecyclerViewFragment<DataSource> extends LibraryBaseFragment implements SwipeRefreshLayout.OnRefreshListener, LibraryBaseRecyclerViewAdapter.OnRecyclerViewClickListener<DataSource> {
 
     RecyclerView baseRecyclerView;
 
@@ -90,6 +90,7 @@ public abstract class LibraryBaseRecyclerViewFragment<DataSource> extends Librar
                 }
             });
         }
+        mAdapter.setRecyclerViewClickListener(this);
         baseRecyclerView.setAdapter(mAdapter);
     }
 
