@@ -28,6 +28,7 @@ public class StatusBarTool {
         if (mChildView != null) {
             //注意不是设置 ContentView 的 FitsSystemWindows, 而是设置 ContentView 的第一个子 View . 使其不为系统 View 预留空间.
             ViewCompat.setFitsSystemWindows(mChildView, false);
+            mChildView.setPadding(0, 0, 0, 0);
         }
     }
 
