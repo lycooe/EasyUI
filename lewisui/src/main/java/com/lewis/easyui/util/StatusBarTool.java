@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.lewis.easyui.EasyUI;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -116,4 +118,12 @@ public class StatusBarTool {
         return result;
     }
 
+    public static int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = EasyUI.ctx.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = EasyUI.ctx.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
 }

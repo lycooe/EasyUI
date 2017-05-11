@@ -23,7 +23,7 @@ public abstract class LibraryBaseRecyclerViewFragment<DataSource> extends Librar
 
     SwipeRefreshLayout refreshWidget;
 
-    private RecyclerView.LayoutManager layoutManager;
+//    private RecyclerView.LayoutManager layoutManager;
 
     private LibraryBaseRecyclerViewAdapter mAdapter;
 
@@ -45,9 +45,9 @@ public abstract class LibraryBaseRecyclerViewFragment<DataSource> extends Librar
 
 
         // 设置布局管理器
-        if (layoutManager == null) {
-            layoutManager = getLayoutManager();
-        }
+//        if (layoutManager == null) {
+        final RecyclerView.LayoutManager layoutManager = getLayoutManager();
+//        }
 
         baseRecyclerView.setLayoutManager(layoutManager);
         baseRecyclerView.setHasFixedSize(true);
