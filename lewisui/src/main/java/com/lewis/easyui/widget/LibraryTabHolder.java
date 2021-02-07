@@ -1,19 +1,19 @@
 package com.lewis.easyui.widget;
 
 import android.content.Context;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.lewis.easyui.R;
 import com.lewis.easyui.util.CheckTool;
 import com.lewis.easyui.util.EasyLog;
@@ -92,7 +92,7 @@ public class LibraryTabHolder extends FrameLayout {
         if (CheckTool.isEmpty(tabInfos) || fm == null) {
             throw new RuntimeException("Mast have tabinfos and FragmentManager");
         }
-        tabLayout = (TabLayout) findViewById(R.id.tabbar_tablayout);
+        tabLayout = findViewById(R.id.tabbar_tablayout);
         if (tabLayout == null) {
             throw new RuntimeException("Your Tabbar must have a TabLayout whose id attribute is 'R.id.tabbar_tablayout'");
         }
@@ -204,7 +204,7 @@ public class LibraryTabHolder extends FrameLayout {
             tabLayout.addTab(tabLayout.newTab().setCustomView(tabWidgetView), i, i == 0);
         }
 
-        for(int i=0; i < tabLayout.getTabCount(); i++) {
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
             View tab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(i);
             MarginLayoutParams p = (MarginLayoutParams) tab.getLayoutParams();
             p.setMargins(0, 0, 0, 0);

@@ -3,12 +3,13 @@ package com.lewis.easyui.util;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.annotation.ColorInt;
+import androidx.core.view.ViewCompat;
 
 import com.lewis.easyui.EasyUI;
 

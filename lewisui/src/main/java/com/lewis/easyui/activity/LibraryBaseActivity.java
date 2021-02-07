@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.annotation.ColorInt;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 import com.lewis.easyui.R;
 import com.lewis.easyui.event.BaseEvent;
@@ -21,8 +22,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.Serializable;
-
-import butterknife.ButterKnife;
 
 /**
  *
@@ -64,7 +63,7 @@ public abstract class LibraryBaseActivity extends SwipeBackActivity {
     public void setContentView(View view) {
         this.baseActView = view;
         super.setContentView(view);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
         int edge = getEdgeTrackingEnabled();
         setSwipeBackEnable(edge > -1);
         if (edge > -1) {

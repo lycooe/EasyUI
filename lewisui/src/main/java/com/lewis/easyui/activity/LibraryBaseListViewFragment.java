@@ -1,16 +1,16 @@
 package com.lewis.easyui.activity;
 
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.lewis.easyui.R;
 import com.lewis.easyui.adapter.LibraryBaseListViewAdapter;
 import com.lewis.easyui.util.CheckTool;
 import com.lewis.easyui.widget.swiperefresh.XListView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.lewis.easyui.R;
 
 /**
  *

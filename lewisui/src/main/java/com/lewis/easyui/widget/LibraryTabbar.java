@@ -1,16 +1,17 @@
 package com.lewis.easyui.widget;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import com.lewis.easyui.R;
 import com.lewis.easyui.activity.LibraryBaseFragment;
@@ -184,7 +185,7 @@ public class LibraryTabbar extends FrameLayout {
                     }
 //                    mCurrentIndex = index;
 
-                    if (!pageSelected(index)){
+                    if (!pageSelected(index)) {
                         setCurrentItem(index);
                     }
                 }
@@ -199,7 +200,7 @@ public class LibraryTabbar extends FrameLayout {
                 ((LibraryBaseFragment) fragment).tabInitData(index, fragment);
             }
 
-           return tabPageChangeListener.onPageSelected(index, fragment);
+            return tabPageChangeListener.onPageSelected(index, fragment);
         }
         return true;
     }

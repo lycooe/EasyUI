@@ -3,16 +3,16 @@ package com.lewis.easyui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import com.lewis.easyui.event.BaseEvent;
 import com.lewis.easyui.util.RelayoutViewTool;
 
-import butterknife.ButterKnife;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -48,7 +48,7 @@ public abstract class LibraryBaseFragment extends Fragment {
     @Override
     public final View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         baseFgmView = inflater.inflate(getContentViewId(), container, false);
-        ButterKnife.bind(this, baseFgmView);
+//        ButterKnife.bind(this, baseFgmView);
         if (isRelayout()) {
             RelayoutViewTool.relayoutViewWithScale(baseFgmView, getTopActivity().getApplicationContext().getResources().getDisplayMetrics().widthPixels);
         }
